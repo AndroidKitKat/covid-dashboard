@@ -1,0 +1,23 @@
+<body>
+    <div class="flex-container">
+        <div class="irc-chat" id="irc-chat">
+            <iframe src="https://kiwiirc.com/client/chat.ndlug.org:+6697/#dashboard"
+                style="border:0; width: 100%;"></iframe>
+        </div>
+        <div class="covid-dashboard" id="covid-dashboard">
+            <iframe id="covid-iframe" allowfullscreen="true" allowtransparency="true" class="tableauViz" frameborder="0" marginheight="0"
+                marginwidth="0"
+                src="https://tableau.nd.edu/views/CovidDashboard/Covid19Dashboard?:embed=y&amp;:showVizHome=no&amp;:host_url=https%3A%2F%2Ftableau.nd.edu%2F&amp;:embed_code_version=3&amp;:tabs=no&amp;:toolbar=no&amp;:showAppBanner=false&amp;:display_spinner=no&amp;:loadOrderID=0"
+                style="display: block; margin: 0px; padding: 0px; border: none; width: 100%; height: auto;"
+                title="Data Visualization"></iframe>
+        </div>
+    </div>
+</body>
+<script>
+    $("iframe").height($("#irc-chat").height());
+    $("iframe").height($("#covid-dashboard").height());
+    $(window).resize(function () {
+        $("iframe").height($("#middle").height());
+        $("iframe").height($("#covid-dashboard").height());
+    });
+</script>
