@@ -4,6 +4,9 @@
             <iframe src="https://kiwiirc.com/client/chat.ndlug.org:+6697/#dashboard"
                 style="border:0; width: 100%;"></iframe>
         </div>
+        <div>
+            <button id="refresh-btn">Refresh dashboard</button>
+        </div>
         <div class="covid-dashboard" id="covid-dashboard">
             <iframe id="covid-iframe" allowfullscreen="true" allowtransparency="true" class="tableauViz" frameborder="0" marginheight="0"
                 marginwidth="0"
@@ -20,4 +23,11 @@
         $("iframe").height($("#middle").height());
         $("iframe").height($("#covid-dashboard").height());
     });
+    $(document).ready(function() {
+    $("#refresh-btn").click(function(){
+        var currSrc = $("#covid-iframe").attr("src");
+        $("#covid-iframe").attr("src", currSrc);
+        console.log('this should have updated')
+    }); 
+});
 </script>
